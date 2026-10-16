@@ -299,10 +299,10 @@ function renderStats() {
   groups(state.period).forEach((g, i) => {
     const row = el('tr', body, { cls: 'stats-row' });
     el('th', row, { text: periodLabel(g.key, state.period), attrs: { scope: 'row' } });
-    el('td', row, { cls: 'ta-r num', text: g.events + '건' });
-    el('td', row, { cls: 'ta-r num', text: g.npay + '건' });
-    el('td', row, { cls: 'ta-r num strong', text: g.total.toLocaleString('ko-KR') + 'P' });
-    const cell = el('td', row, { cls: 'ta-r' });
+    el('td', row, { cls: 'ta-r num cell-events', text: g.events + '건', attrs: { 'data-label': '이벤트' } });
+    el('td', row, { cls: 'ta-r num cell-npay', text: g.npay + '건', attrs: { 'data-label': 'Npay 완료' } });
+    el('td', row, { cls: 'ta-r num strong cell-total', text: g.total.toLocaleString('ko-KR') + 'P', attrs: { 'data-label': '적립액' } });
+    const cell = el('td', row, { cls: 'ta-r cell-toggle' });
     const id = 'stats-detail-' + i;
     const toggle = el('button', cell, { cls: 'btn-link', attrs: { 'aria-expanded': 'false', 'aria-controls': id } });
     toggle.innerHTML = '<span>' + g.items.length + '건 보기</span>' + ICON_CHEVRON;
@@ -351,7 +351,7 @@ $('#save-demo').onclick = () => {
 
 $('#csv').onclick = () => {
   const lines = [
-    ['기간', '이벤트(건)', 'Npay 완료(건)', '완료 기준 적립액(P)', '구분'],
+    ['기간', '이벤트(건)', 'Npay 완료(건)', '완��� 기준 적립액(P)', '구분'],
     ...groups(state.period).map((g) => [periodLabel(g.key, state.period), g.events, g.npay, g.total, '모두 가상 데이터']),
   ];
   const csv = '\uFEFF' + lines.map((r) => r.map((c) => '"' + String(c).replace(/"/g, '""') + '"').join(',')).join('\r\n');
