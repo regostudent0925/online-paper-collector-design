@@ -1,0 +1,13 @@
+# 디자인 결과물에만 한정한다.
+.env
+.env.*
+!.env.example
+node_modules/
+state/
+verification/
+browser-helper/
+*.zip
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

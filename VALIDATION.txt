@@ -1,0 +1,18 @@
+가상 디자인 패키지 점검 / 2026-10-16 한국시간
+실제 참여 기록·계정·개인정보 없는 독립 작성 가상 데이터 사용.
+실제 앱에서 재사용한 파일은 디자인 CSS뿐이며 원본 앱은 변경하지 않음.
+JS 문법 검사 통과. Chrome에서 3화면 렌더링, 가상 검색·참여 상태 저장·새로고침 초기화·통계 기간 전환 확인.
+HTML/JS에 외부 URL·네트워크 호출·쿠키·Chrome API·로컬 저장소 접근·원본 상태 참조 없음.
+가상 Npay 과거 내역 전체170P, 오늘80P/주간100P/월간115P. 실제 사용자 합계 아님.
+실제 v0 업로드·디자인 재생성·배포는 수행하지 않음.
+CSV 버튼은 가상 CSV 생성용. 실제 파일 다운로드 대화상자는 검증하지 않음.
+파일 점검(파일명 / 바이트 / SHA-256):
+README.txt / 2029 / e44dacb76e1c11099b33830134a35c7effb206f824dc09b09f24b04a41cd6838
+V0_PROMPT.txt / 3595 / 18de4b982645b6aae2d7a426959810f92d5040f770916c408a8d05460592f9b3
+design.css / 22510 / b43eedc21185daeadff05e2219f93ab045b7a4722d82c153b555f9cc08cfeae1
+design.js / 8210 / e1d14d19feab499070744e58a50f8587db73c5743110fe55f3dd9740dc1b8156
+index.html / 4269 / 1862a14e03fa6a5a62cc95057a241111d9109f7f58e928e1220e38126a670050
+mock-data.js / 2364 / c11de380f123c3bdf0aa4fcd63f26de196e483d5a221df199e457f5a405b96c8
+screenshots/01-today.jpg / 80945 / 58ebfe9fe547b1b8b47e2208ebf63d5cc8299d4fd0841b0d1d283905461b703d
+screenshots/02-npay.jpg / 78736 / 8b2e50e4b58838125f65b987871eaa6fbd4b8a4b1e6a883b0e2dea3077b8d83a
+screenshots/03-statistics.jpg / 63499 / eab29f4d08611050cae586d66a30925c85ccc68140c5364c56e8ea2133d6546c
