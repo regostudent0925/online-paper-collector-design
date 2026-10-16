@@ -1,8 +1,162 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>가상 디자인 시안 · 온라인 폐지줍기</title><link rel="stylesheet" href="design.css"><script src="mock-data.js" defer></script><script src="design.js" defer></script></head>
-<body><aside class="sidebar"><a class="brand" href="#today"><span class="brand-icon">✳</span><span>온라인 폐지줍기<small>티끌모아 태산</small></span></a><p class="nav-caption">MY EVENT DESK</p><nav aria-label="주 메뉴"><button class="nav-item" data-screen="today">▦ 오늘의 이벤트</button><button class="nav-item" data-screen="npay">Ⓟ Npay 클릭·방문 적립</button><button class="nav-item" data-screen="stats">▤ 참여 통계</button></nav><div class="sidebar-note"><span class="tiny-label">작은 기회를 모으는 습관</span><p>참여는 가볍게,<br>기록은 잊지 않게.</p><span>디자인 검토용 가상 데이터<br>실제 이벤트·참여 기록 아님</span></div><div class="local-label">외부 연결 없는 디자인 사본</div></aside>
-<main><header class="topbar"><span>2026년 10월 16일 금요일 · 예시 날짜</span><span>가상 데이터 · 디자인 검토용</span></header>
-<section id="page-today"><div class="section-heading"><div><p class="eyebrow">TODAY'S PICKS</p><h2>오늘의 이벤트</h2></div><button class="button-light" data-reset>↻ 예시 새로 보기</button></div><p class="time-note">행사명·경품·정답은 모두 가상 예시입니다.</p><div id="event-tabs" class="status-tabs"></div><div class="toolbar"><div class="tabs"><button class="tab active">전체</button><button class="tab">퀴즈</button><button class="tab">간단 응모</button></div><label class="search">⌕ <input id="event-search" type="search" placeholder="행사명 또는 주최사 검색" aria-label="가상 행사 검색"></label></div><div id="events"></div><div class="save-bar"><div><strong>참여 상태를 기록해 두세요</strong><p>디자인 사본의 변경은 메모리에만 반영되며 새로고침하면 초기화됩니다.</p></div><button id="save-demo" class="button-primary">선택한 상태 저장 ↗</button></div></section>
-<section id="page-npay" hidden><div class="section-heading"><div><p class="eyebrow">NPAY CLICK &amp; VISIT</p><h2>Npay 클릭·방문 적립</h2></div><button class="button-light" data-reset>↻ 예시 새로 보기</button></div><p class="section-description">빠르게 살펴보고 직접 참여하는 간결한 링크 목록 · 가상 예시</p><p class="npay-updated">목록 갱신: 2026. 10. 16. 09:00 (한국시간 · 가상)</p><div class="npay-controls"><label class="npay-search">제목 검색<input id="npay-search" type="search" placeholder="이벤트 제목 검색" aria-label="가상 Npay 제목 검색"></label><label>정렬<select id="npay-sort" aria-label="Npay 정렬"><option value="points">포인트 높은 순</option><option value="default">기본 순서</option></select></label></div><div id="npay-tabs" class="npay-tabs"></div><div id="npay-rows" class="npay-direct-grid"></div><p class="npay-footnote">포인트는 가상 금액입니다. 실제 광고·포인트 받기 버튼·탭 닫기 기능에 연결되지 않습니다.</p></section>
-<section id="page-stats" hidden><div class="section-heading"><div><p class="eyebrow">MY PARTICIPATION</p><h2>참여 통계</h2></div><button class="button-light" data-reset>↻ 예시 새로 보기</button></div><div id="stats-cards" class="stats-cards"></div><p class="time-note">완료 당시 표시 금액을 적립되었다고 가정한 통계 디자인입니다. 모든 내역·합계는 가상입니다. 주간은 월요일~일요일 기준입니다.</p><div class="stats-toolbar"><div id="stats-tabs" class="stats-tabs"></div><button id="csv" class="button-light">통계 CSV 저장 ↓</button></div><h3 id="stats-heading" class="stats-heading"></h3><div id="stats-table" class="stats-table-wrap"></div></section>
-<p id="feedback" role="status" class="npay-feedback"></p><footer><span class="footer-brand">✳ 온라인 폐지줍기 - 티끌모아 태산</span><p>가상 데이터만 포함한 디자인 검토용 사본</p></footer></main></body></html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17463b">
+  <meta name="description" content="온라인 폐지줍기 - 티끌모아 태산 · 이벤트·포인트 관리 디자인 시안 (가상 데이터)">
+  <title>온라인 폐지줍기 - 티끌모아 태산 · 디자인 시안</title>
+  <link rel="stylesheet" href="design.css">
+  <script src="mock-data.js" defer></script>
+  <script src="design.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <aside class="sidebar">
+    <a class="brand" href="#today" aria-label="온라인 폐지줍기 - 티끌모아 태산 홈">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span class="brand-text"><strong>온라인 폐지줍기</strong><small>티끌모아 태산</small></span>
+    </a>
+    <nav class="nav" aria-label="주 메뉴">
+      <button class="nav-item" data-screen="today">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+        <span>오늘의 이벤트</span><b class="nav-count" id="nav-count-today"></b>
+      </button>
+      <button class="nav-item" data-screen="npay">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 16.5v-9h3.25a2.75 2.75 0 0 1 0 5.5H9.5"/></svg>
+        <span>Npay 클릭·방문 적립</span><b class="nav-count" id="nav-count-npay"></b>
+      </button>
+      <button class="nav-item" data-screen="stats">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        <span>참여 통계</span>
+      </button>
+    </nav>
+    <p class="sidebar-note">가상 데이터 · 외부 연결 없는 디자인 사본</p>
+  </aside>
+
+  <main id="main">
+    <header class="topbar">
+      <time datetime="2026-10-16">2026년 10월 16일 (금) · 한국시간</time>
+      <span class="badge badge-neutral">가상 데이터</span>
+    </header>
+
+    <!-- 오늘의 이벤트 -->
+    <section id="page-today" class="page" aria-labelledby="h-today">
+      <div class="page-head">
+        <div>
+          <h1 id="h-today">오늘의 이벤트</h1>
+          <p class="page-sub">행사명·경품·정답은 모두 가상 예시입니다.</p>
+        </div>
+        <button class="btn btn-ghost btn-sm" data-reset>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>예시 새로 보기
+        </button>
+      </div>
+
+      <div id="event-tabs" class="tabs-line" role="tablist" aria-label="참여 상태"></div>
+
+      <div class="toolbar">
+        <div id="event-types" class="segmented" role="group" aria-label="참여 방식"></div>
+        <label class="search">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr-only">행사명 또는 주최사 검색</span>
+          <input id="event-search" type="search" placeholder="행사명 또는 주최사 검색" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="board" role="region" aria-label="이벤트 목록">
+        <div class="board-head" aria-hidden="true">
+          <span>이벤트</span><span>경품 · 선정</span><span>마감</span><span>방식</span><span class="ta-r">참여</span>
+        </div>
+        <div id="events"></div>
+      </div>
+
+      <div class="save-bar" id="save-bar">
+        <p id="save-status">변경한 참여 상태가 없습니다.</p>
+        <button id="save-demo" class="btn btn-primary" disabled>선택한 상태 저장</button>
+      </div>
+    </section>
+
+    <!-- Npay 클릭·방문 적립 -->
+    <section id="page-npay" class="page" aria-labelledby="h-npay" hidden>
+      <div class="page-head">
+        <div>
+          <h1 id="h-npay">Npay 클릭·방문 적립</h1>
+          <p class="page-sub">목록 갱신 <time id="npay-updated"></time> (한국시간 · 가상)</p>
+        </div>
+        <button class="btn btn-ghost btn-sm" data-reset>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>예시 새로 보기
+        </button>
+      </div>
+
+      <div id="npay-tabs" class="tabs-line" role="tablist" aria-label="적립 상태"></div>
+
+      <div class="toolbar">
+        <label class="search search-wide">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr-only">이벤트 제목 검색</span>
+          <input id="npay-search" type="search" placeholder="제목 검색" autocomplete="off">
+        </label>
+        <label class="field-inline">
+          <span>정렬</span>
+          <select id="npay-sort">
+            <option value="points">포인트 높은 순</option>
+            <option value="default">기본 순서</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="list" role="region" aria-label="Npay 목록">
+        <div class="list-head">
+          <span id="npay-summary"></span>
+        </div>
+        <ul id="npay-rows" class="npay-list"></ul>
+      </div>
+      <p class="footnote">포인트는 가상 금액입니다. 실제 광고·포인트 받기·탭 닫기 기능에 연결되지 않습니다.</p>
+    </section>
+
+    <!-- 참여 통계 -->
+    <section id="page-stats" class="page" aria-labelledby="h-stats" hidden>
+      <div class="page-head">
+        <div>
+          <h1 id="h-stats">참여 통계</h1>
+          <p class="page-sub">한국시간 · 주간은 월요일~일요일 기준</p>
+        </div>
+        <button class="btn btn-ghost btn-sm" data-reset>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>예시 새로 보기
+        </button>
+      </div>
+
+      <div id="stats-cards" class="kpis"></div>
+      <p class="assume">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+        <span><strong>완료 기준 적립액</strong>은 완료로 표시한 항목의 포인트가 모두 지급되었다고 가정한 합계입니다. 이벤트는 건수만 집계합니다. 모든 내역은 가상입니다.</span>
+      </p>
+
+      <div class="toolbar">
+        <div id="stats-tabs" class="segmented" role="group" aria-label="집계 단위"></div>
+        <button id="csv" class="btn btn-ghost btn-sm">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>통계 CSV 저장
+        </button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="stats-table">
+          <caption id="stats-heading" class="sr-only"></caption>
+          <thead>
+            <tr><th scope="col">기간</th><th scope="col" class="ta-r">이벤트</th><th scope="col" class="ta-r">Npay 완료</th><th scope="col" class="ta-r">완료 기준 적립액</th><th scope="col" class="ta-r">내역</th></tr>
+          </thead>
+          <tbody id="stats-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>✳ 온라인 폐지줍기 - 티끌모아 태산</span>
+      <span>가상 데이터만 포함한 디자인 검토용 사본</span>
+    </footer>
+  </main>
+
+  <p id="feedback" class="toast" role="status" aria-live="polite"></p>
+</body>
+</html>
